@@ -1,2 +1,2 @@
 # docker-rsync
-Greg's dirk polling rsync docker
+Greg's dirty polling rsync docker
