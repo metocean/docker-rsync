@@ -1,0 +1,5 @@
+docker_compose:
+  services_to_push:
+    rsync: metocean/rsync
+notification_emails:
+    - g.chalmers@metocean.co.nz
