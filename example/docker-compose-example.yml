@@ -1,17 +1,13 @@
 version: '2'
 services:
   rsync:
-    build:
-      context: .
-      dockerfile: Dockerfile
+    image: metocean/rsync
+    restart: always
+    volumes:
+      - /data:/data_src
+      - /data_backup:/data_dest
     logging:
       driver: "json-file"
       options:
         max-size: "200k"
         max-file: "10"
-    volumes:
-      - /data:/data_src
-      - /data_backup:/data_dest
-      - ./rsync.sh:/rsync.sh
-    entrypoint: /rsync.sh
-    restart: always
