@@ -1,0 +1,15 @@
+version: '2'
+services:
+  rsync:
+    image: metocean/rsync
+    restart: always
+    environment:
+      - POLLING_INTERVAL=15
+    volumes:
+      - /data:/data_src
+      - /data_backup:/data_dest
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "512k"
+        max-file: "10"
