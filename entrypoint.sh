@@ -12,6 +12,6 @@ fi
 echo "polling interval: $interval seconds"
 while :
 do
-  /usr/bin/rsync -av --delete /data_src/ /data_dest/
+  /usr/bin/rsync -av --delete --ignore-existing /data_src/ /data_dest/
   sleep $interval
 done
